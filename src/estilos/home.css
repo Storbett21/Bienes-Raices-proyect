@@ -1,0 +1,111 @@
+
+
+
+body {
+    font-family: "Helvetica Neue",;
+    font-size: 1.6rem;
+    line-height: 1.8;
+}
+
+p {
+    color: black;
+    font-size: 1rem;
+}
+
+
+.contenedor {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+
+
+.header{
+
+    background-image: url(../imagenes/img/header.jpg);
+    min-height: 70rem;
+    background-position: center center;
+    background-size: cover;
+    background-color:  #333333;
+    padding: 1rem 0 3rem 0;
+    
+}
+.contenido-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 70rem;
+
+    h1 {
+        text-align: left;
+        color: aliceblue;
+        font-weight: bold;
+        max-width: 60rem;
+    }
+
+
+}
+.barra{
+    display: flex;
+    flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 3rem;
+}
+
+
+img,
+picture {
+    width: 100%;
+    display: block;
+}
+
+h1, h2, h3 {
+    font-family: "Helvet";
+    margin: calc(separacion / 2) 0;
+    font-weight: 300;
+    text-align: center;
+    
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 3.4rem;
+}
+h3 {
+    font-size: 3rem;
+}
+h4 {
+    font-size: 2.6rem;
+}
+/* Estilos normales para pantallas grandes */
+.navegacion {
+    display: flex;
+    flex-direction: row; /* Para que los enlaces se vean en línea verticalmente */
+    margin-right: 0;
+    align-items: center;
+  }
+
+.enlace {
+     color: aliceblue;
+     margin-right: 2rem;
+     text-decoration: none;
+     font-size: 1.7rem;
+  }
+  
+  /* Estilos para pantallas pequeñas (ej. móviles) */
+  @media (max-width: 600px) {
+    .navegacion {
+      flex-direction: column; /* Cambiar la dirección a columna */
+      align-items: center; /* Centrar elementos horizontalmente */
+      text-align: center; /* Centrar texto */
+    }
+  
+    .navegacion a {
+      margin-bottom: 10px; /* Agregar espacio entre elementos */
+    }
+  }
+  
