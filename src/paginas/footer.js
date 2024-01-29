@@ -10,7 +10,7 @@ const Footer =() =>{
 
     return (
 
-        <div className="footer contenedor-footer">
+        <div className="contenedor-footer">
           
 
             <nav className="navegacion1">
