@@ -6,6 +6,8 @@ import icono1 from "../imagenes/img/icono1.svg";
 import icono2 from "../imagenes/img/icono2.svg";
 import icono3 from "../imagenes/img/icono3.svg";
 import anuncio1 from "../imagenes/img/anuncio1.jpg";
+import anuncio2 from "../imagenes/img/anuncio2.jpg";
+import anuncio3 from "../imagenes/img/anuncio3.jpg";
 import wc from "../imagenes/img/icono_wc.svg";
 import estacionamiento from "../imagenes/img/icono_estacionamiento.svg";
 import cuartos from "../imagenes/img/icono_dormitorio.svg";
@@ -59,36 +61,95 @@ export const Home = () => {
 
                     <div className="contenedor-anuncios">
                         <div className="anuncio">
-                           <picture>
-                          <img src={anuncio1} alt="anuncio"></img>
-                           </picture>
-                           <div className="contenido-anuncio">
-                            <h3> Casa de Lujo en el Lago</h3>
-                            <p>Casa en el Lago con excelente vista, acabados de lujo a un exclente precio</p>
-                            <p className="precio"> 90.000.000</p>
-                            <ul className="iconos-caracteristicas">
-                                <li>
-                                    <img src={wc} alt="poceta"></img>
-                                    <p>3</p>
+                            <picture>
+                                <img src={anuncio1} alt="anuncio"></img>
+                            </picture>
+                            <div className="contenido-anuncio">
+                                <h3> Casa de Lujo en el Lago</h3>
+                                <p>Casa en el Lago con excelente vista, acabados de lujo a un exclente precio</p>
+                                <p className="precio"> 90.000.000</p>
+                                <ul className="iconos-caracteristicas">
+                                    <li>
+                                        <img src={wc} alt="poceta"></img>
+                                        <p>3</p>
 
-                                </li>
-                                <li>
-                                    <img src={estacionamiento} alt="estacionamiento"></img>
-                                    <p>3</p>
+                                    </li>
+                                    <li>
+                                        <img src={estacionamiento} alt="estacionamiento"></img>
+                                        <p>3</p>
 
-                                </li>
-                                <li>
-                                    <img src={cuartos} alt="cuartos"></img>
-                                    <p>4</p>
+                                    </li>
+                                    <li>
+                                        <img src={cuartos} alt="cuartos"></img>
+                                        <p>4</p>
 
-                                </li>
+                                    </li>
 
-                            </ul>
-                        <Link to="/anuncios" className="boton boton-amarillo">Ver Propiedad</Link>
-                           </div>
+                                </ul>
+                                <Link to="/anuncios" className="boton boton-amarillo">Ver Propiedades</Link>
+                            </div>
+                        </div>
+                        <div className="anuncio">
+                            <picture>
+                                <img src={anuncio2} alt="anuncio"></img>
+                            </picture>
+                            <div className="contenido-anuncio">
+                                <h3> Casa con Terminados de Lujo</h3>
+                                <p>Casa en el Lago con excelente vista, acabados de lujo a un exclente precio</p>
+                                <p className="precio"> 90.000.000</p>
+                                <ul className="iconos-caracteristicas">
+                                    <li>
+                                        <img src={wc} alt="poceta"></img>
+                                        <p>3</p>
+
+                                    </li>
+                                    <li>
+                                        <img src={estacionamiento} alt="estacionamiento"></img>
+                                        <p>3</p>
+
+                                    </li>
+                                    <li>
+                                        <img src={cuartos} alt="cuartos"></img>
+                                        <p>4</p>
+
+                                    </li>
+
+                                </ul>
+                                <Link to="/anuncios" className="boton boton-amarillo">Ver Propiedades</Link>
+                            </div>
+                        </div>
+                        <div className="anuncio">
+                            <picture>
+                                <img src={anuncio3} alt="anuncio"></img>
+                            </picture>
+                            <div className="contenido-anuncio">
+                                <h3> Casa con piscina</h3>
+                                <p>Casa en el Lago con excelente vista, acabados de lujo a un exclente precio</p>
+                                <p className="precio"> 90.000.000</p>
+                                <ul className="iconos-caracteristicas">
+                                    <li>
+                                        <img src={wc} alt="poceta"></img>
+                                        <p>3</p>
+
+                                    </li>
+                                    <li>
+                                        <img src={estacionamiento} alt="estacionamiento"></img>
+                                        <p>3</p>
+
+                                    </li>
+                                    <li>
+                                        <img src={cuartos} alt="cuartos"></img>
+                                        <p>4</p>
+
+                                    </li>
+
+                                </ul>
+                                <Link to="/anuncios" className="boton boton-amarillo">Ver Propiedades</Link>
+                            </div>
                         </div>
 
                     </div>
+
                 </div>
             </body>
         </>

@@ -180,4 +180,15 @@ h4 {
         font-weight: bold;
     }
 }
+.boton{
+    display: block;
+    background-color: rgba(255, 170, 0, 0.733);
+    color: aliceblue;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    text-align: center;
+    margin-top: 2.5rem;
+    border-radius: 1rem;
+}
     
