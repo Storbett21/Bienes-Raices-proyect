@@ -89,3 +89,26 @@ h4 {
     }
   }
   
+  .contenido-nosotros {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Dos columnas con el mismo ancho */
+    gap: 0rem; /* Espacio de 2rem entre columnas */
+}
+
+/* Ajusta el tamaño del contenido si es necesario */
+.contenido-nosotros > * {
+    /* Agrega estilos según sea necesario para que el contenido se ajuste correctamente */
+    max-width: 75%; /* Ajusta el ancho máximo si es necesario */
+}
+.texto-nosotros blockquote{
+
+  font-weight: bold;
+  font-size: 2.2rem;
+  margin: 0;
+ 
+
+}
+.img{
+
+  margin-left: 1rem;
+}
