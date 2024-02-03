@@ -11,6 +11,8 @@ import anuncio3 from "../imagenes/img/anuncio3.jpg";
 import wc from "../imagenes/img/icono_wc.svg";
 import estacionamiento from "../imagenes/img/icono_estacionamiento.svg";
 import cuartos from "../imagenes/img/icono_dormitorio.svg";
+import Blog1 from "../imagenes/img/blog1.jpg";
+import Blog2 from "../imagenes/img/blog2.jpg";
 
 
 export const Home = () => {
@@ -86,7 +88,7 @@ export const Home = () => {
                                     </li>
 
                                 </ul>
-                                <Link to="/anuncios" className="boton boton-amarillo">Ver Propiedades</Link>
+                                <Link to="/anuncios" className="boton">Ver Propiedades</Link>
                             </div>
                         </div>
                         <div className="anuncio">
@@ -94,7 +96,7 @@ export const Home = () => {
                                 <img src={anuncio2} alt="anuncio"></img>
                             </picture>
                             <div className="contenido-anuncio">
-                                <h3> Casa con Terminados de Lujo</h3>
+                                <h3> Casa Terminados de Lujo</h3>
                                 <p>Casa en el Lago con excelente vista, acabados de lujo a un exclente precio</p>
                                 <p className="precio"> 90.000.000</p>
                                 <ul className="iconos-caracteristicas">
@@ -115,7 +117,7 @@ export const Home = () => {
                                     </li>
 
                                 </ul>
-                                <Link to="/anuncios" className="boton boton-amarillo">Ver Propiedades</Link>
+                                <Link to="/anuncios" className="boton">Ver Propiedades</Link>
                             </div>
                         </div>
                         <div className="anuncio">
@@ -144,13 +146,76 @@ export const Home = () => {
                                     </li>
 
                                 </ul>
-                                <Link to="/anuncios" className="boton boton-amarillo">Ver Propiedades</Link>
+                                <Link to="/anuncios" className="boton">Ver Propiedades</Link>
                             </div>
                         </div>
 
                     </div>
+                    <div className="ver-todas">
 
-                </div>
+                        <Link to="/anuncios" className="boton-verde"> Ver Todas</Link>
+
+                    </div>
+                   </div>
+                   <section className="imagen-contacto">
+                        <h2>Encuentra la casa de tus Sueños</h2>
+                        <p> LLena el Formulario de contacto y un asesor se pondra en contacto contigo a la brevedad</p>
+                        <Link to="/contacto" className="boton-amarillo">Contactanos</Link>
+                    </section>
+                    <div className="contenedor seccion seccion-inferior">
+                        <section className="blog">
+                            <h3>Nuestro Blog</h3>
+
+                            <article className="entrada-blog">
+                                <div className="imagen">
+                                    <picture>
+                                        <img src={Blog1} alt="Texto Entrada Blog"></img>
+                                    </picture>
+                                </div>
+                                <div className="texto-entrada">
+                                    <Link to="/blogs" className="a">
+                                        <h4>Terraza en el Techo de tu Casa</h4>
+                                        <p>Escrito el: <span>20/10/2024</span> por <span> Admin</span></p>
+                                        <p>
+                                            Consejos para construir una terraza en el techo de tu casa con los mejores materiales y ahorrando dinnero
+                                        </p>
+                                    </Link>
+
+                                </div>
+
+                            </article>
+                            
+                            <article className="entrada-blog">
+                                <div className="imagen">
+                                    <picture>
+                                        <img src={Blog2} alt="Texto Entrada Blog"></img>
+                                    </picture>
+                                </div>
+                                <div className="texto-entrada">
+                                    <Link to="/blogs"className="a">
+                                        <h4>Guia Para la Decoracion de tu hogar</h4>
+                                        <p>Escrito el: <span>20/10/2024</span> por <span> Admin</span></p>
+                                        <p>
+                                            Maximiza el espacio de tu hogar con esta guia, aprende a combinar muebles y colores para darle vida a tu espacio
+                                        </p>
+                                    </Link>
+
+                                </div>
+
+                            </article>
+                        </section>
+                        <section className="testimonailes">
+                            <h3>Testimoniales</h3>
+                            <div className="testimonial">
+
+                                <blockquote>
+                                    El personal se comporto de una excelente forma, muy buena atencion y la casa que me ofrecieron cumple con todas mis expectativas
+                                </blockquote>
+                                <p> -Simon Torbett</p>
+
+                            </div>
+                        </section>
+                    </div>
             </body>
         </>
     )
