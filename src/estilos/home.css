@@ -145,7 +145,7 @@ h4 {
 }
 
 .anuncio {
-    background-color: lightgray;
+    background-color: rgb(234, 234, 234);
     border: 1px solid lightgray;
 }
 .contenido-anuncio{
@@ -191,4 +191,120 @@ h4 {
     margin-top: 2.5rem;
     border-radius: 1rem;
 }
+.boton-amarillo {
+    display: inline-block;
+    justify-content: center;
+    background-color: rgba(255, 170, 0, 0.733);
+    color: aliceblue;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem; /* Ajusta estos valores según tus preferencias */
+    text-align: center;
+    margin-top: 2.5rem;
+   
+    border-radius: 1rem;
+}
+
+.ver-todas{
+    display: flex;
+    justify-content: flex-end;
+}
+.boton-verde{
+  
+    background-color:green;
+    color: aliceblue;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    text-align: center;
+    margin-top: 2.5rem;
+    border-radius: 1rem;
     
+}
+.imagen-contacto{
+    background-image: url(../imagenes/img/encuentra.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-color:  #333333;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+
+    h2{
+        font-size: 4rem;
+        font-weight: bold;
+        color: aliceblue;
+    }
+    p{
+        font-size: 1.8rem;
+        color: aliceblue;
+
+    }
+}
+    
+.seccion-inferior{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 2rem;
+
+}
+
+.entrada-blog{
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 2rem;
+}
+.texto-entrada{
+    .a{
+        color: #333333;
+        text-decoration: none;
+    } 
+    h4{
+        margin: 0;
+        line-height: 1.4;
+        &::after{
+            content: '';
+            display: block;
+            width: 15rem;
+            height: .5rem;
+            background-color: green;
+            margin-top: 1rem;
+        }
+    }
+    span{
+        color: rgba(255, 170, 0, 0.733);;
+
+    }
+
+}
+
+.testimonial{
+    background-color: green;
+    font-size: 2.4rem;
+    padding: 2rem;
+    color: aliceblue;
+    border-radius: 2rem;
+    
+    blockquote {
+        padding-left: 5rem;
+        position: relative;
+
+        &::before{
+            content: '';
+            background-image: url(../imagenes/img/comilla.svg);
+            background-repeat: no-repeat;
+            width: 6rem;
+            height: 8rem;
+            display: block;
+            position: absolute;
+            left: -2rem;
+        }
+    }
+    p{
+        text-align: right;
+        color: aliceblue;
+    }
+}
