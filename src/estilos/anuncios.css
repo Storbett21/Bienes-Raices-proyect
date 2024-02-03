@@ -23,7 +23,7 @@ p {
 
 .header1{
 
-    min-height: 40rem;
+    min-height: 10rem;
     background-position: center center;
     background-size: cover;
     background-color:  #333333;
@@ -89,3 +89,17 @@ h4 {
     }
   }
   
+  .contenedor-anuncios  {
+    display: grid;
+  gap: 6rem; /* Reemplaza 20px con el valor que desees para el espaciado */
+  grid-template-columns: repeat(3, 2fr); /* Reemplaza 3 con el número de columnas deseado */
+  @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr); /* Cambiar a 2 columnas en pantallas más pequeñas */
+  }
+
+  @media screen and (max-width: 480px) {
+      grid-template-columns: 1fr; /* Cambiar a 1 columna en pantallas más pequeñas */
+  }
+
+
+}

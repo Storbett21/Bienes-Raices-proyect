@@ -36,7 +36,8 @@ export const Home = () => {
                         </div>
                         <h1>Venta de Casas y Departamentos Exclusivos de Lujo</h1>
                     </div>
-                </div>
+                </div> 
+                
                 <div className="contenedor-seccion">
                     <h1>Mas Sobre Nosotros</h1>
                     <div className="icono-nosotros">
