@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./../estilos/home.css";
-import imagen1 from "../imagenes/img/anuncio1.jpg";
-import imagen2 from "../imagenes/img/anuncio2.jpg";
-import imagen3 from "../imagenes/img/anuncio3.jpg";
+// import imagen1 from "../imagenes/img/anuncio1.jpg";
+// import imagen2 from "../imagenes/img/anuncio2.jpg";
+// import imagen3 from "../imagenes/img/anuncio3.jpg";
 import wc from "../imagenes/img/icono_wc.svg";
 import estacionamiento from "../imagenes/img/icono_estacionamiento.svg";
 import cuartos from "../imagenes/img/icono_dormitorio.svg";
@@ -39,7 +39,7 @@ export const Cards = ({ anuncio1, anuncio2, anuncio3 }) => {
                 <p>4</p>
               </li>
             </ul>
-            <Link to="/anuncios" className="boton">
+            <Link to="/propiedades" className="boton">
               Ver Propiedades
             </Link>
           </div>
@@ -66,7 +66,7 @@ export const Cards = ({ anuncio1, anuncio2, anuncio3 }) => {
                 <p>4</p>
               </li>
             </ul>
-            <Link to="/anuncios" className="boton">
+            <Link to="/propiedades" className="boton">
               Ver Propiedades
             </Link>
           </div>
@@ -93,7 +93,7 @@ export const Cards = ({ anuncio1, anuncio2, anuncio3 }) => {
                 <p>4</p>
               </li>
             </ul>
-            <Link to="/anuncios" className="boton">
+            <Link to="/propiedades" className="boton">
               Ver Propiedades
             </Link>
           </div>

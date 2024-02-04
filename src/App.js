@@ -7,6 +7,7 @@ import { Anuncios } from './paginas/anuncios.js';
 import { Blogs } from './paginas/blogs.js';
 import { Contacto } from './paginas/contacto.js';
 import Footer from './paginas/footer.js';
+import { Propiedades } from './compoenentes/propiedades.jsx';
 
 
 const App = ( ) => {
@@ -21,6 +22,7 @@ return (
     <Route path="/contacto" element={<Contacto />} />
     <Route path="/blogs" element={<Blogs />} />
     <Route path="/anuncios" element={<Anuncios />} />
+    <Route path="/propiedades" element={<Propiedades />} />
 
 
     </Routes>
