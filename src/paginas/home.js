@@ -1,18 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./../estilos/home.css";
-import Logo from "../imagenes/img/logo.svg";
 import icono1 from "../imagenes/img/icono1.svg";
 import icono2 from "../imagenes/img/icono2.svg";
 import icono3 from "../imagenes/img/icono3.svg";
-import anuncio1 from "../imagenes/img/anuncio1.jpg";
-import anuncio2 from "../imagenes/img/anuncio2.jpg";
-import anuncio3 from "../imagenes/img/anuncio3.jpg";
-import wc from "../imagenes/img/icono_wc.svg";
-import estacionamiento from "../imagenes/img/icono_estacionamiento.svg";
-import cuartos from "../imagenes/img/icono_dormitorio.svg";
+import imagen1 from "../imagenes/img/anuncio1.jpg";
+import imagen2 from "../imagenes/img/anuncio2.jpg";
+import imagen3 from "../imagenes/img/anuncio3.jpg";
 import Blog1 from "../imagenes/img/blog1.jpg";
 import Blog2 from "../imagenes/img/blog2.jpg";
+import { Cards } from "../compoenentes/cards";
+import { Header } from "../compoenentes/header";
 
 
 export const Home = () => {
@@ -21,22 +19,9 @@ export const Home = () => {
     return (
         <>
             <body>
-                <div className="header inicio">
-                    <div className="contenedor contenido-header">
-                        <div className="barra">
-                            <Link to="/">
-                                <img src={Logo} alt="Logotipo de Bienes Raices"></img>
-                            </Link>
-                            <nav className="navegacion">
-                                <Link to="/nosotros" className="enlace">Nosotros</Link>
-                                <Link to="/anuncios" className="enlace">Anuncios</Link>
-                                <Link to="/blogs" className="enlace">Blogs</Link>
-                                <Link to="/contacto" className="enlace">Contacto</Link>
-                            </nav>
-                        </div>
-                        <h1>Venta de Casas y Departamentos Exclusivos de Lujo</h1>
-                    </div>
-                </div> 
+              <div>
+                <Header titulo= "Venta de Casas y Departamentos Exclusivos de Lujo" mostrarImagenDeFondo={true}/>
+              </div>
                 
                 <div className="contenedor-seccion">
                     <h1>Mas Sobre Nosotros</h1>
@@ -60,98 +45,15 @@ export const Home = () => {
                     </div>
                 </div>
                 <div className="seccion contenedor">
-                    <h2> Casas Y Departamentos en Venta</h2>
 
-                    <div className="contenedor-anuncios">
-                        <div className="anuncio">
-                            <picture>
-                                <img src={anuncio1} alt="anuncio"></img>
-                            </picture>
-                            <div className="contenido-anuncio">
-                                <h3> Casa de Lujo en el Lago</h3>
-                                <p>Casa en el Lago con excelente vista, acabados de lujo a un exclente precio</p>
-                                <p className="precio"> 90.000.000</p>
-                                <ul className="iconos-caracteristicas">
-                                    <li>
-                                        <img src={wc} alt="poceta"></img>
-                                        <p>3</p>
-
-                                    </li>
-                                    <li>
-                                        <img src={estacionamiento} alt="estacionamiento"></img>
-                                        <p>3</p>
-
-                                    </li>
-                                    <li>
-                                        <img src={cuartos} alt="cuartos"></img>
-                                        <p>4</p>
-
-                                    </li>
-
-                                </ul>
-                                <Link to="/anuncios" className="boton">Ver Propiedades</Link>
-                            </div>
-                        </div>
-                        <div className="anuncio">
-                            <picture>
-                                <img src={anuncio2} alt="anuncio"></img>
-                            </picture>
-                            <div className="contenido-anuncio">
-                                <h3> Casa Terminados de Lujo</h3>
-                                <p>Casa en el Lago con excelente vista, acabados de lujo a un exclente precio</p>
-                                <p className="precio"> 90.000.000</p>
-                                <ul className="iconos-caracteristicas">
-                                    <li>
-                                        <img src={wc} alt="poceta"></img>
-                                        <p>3</p>
-
-                                    </li>
-                                    <li>
-                                        <img src={estacionamiento} alt="estacionamiento"></img>
-                                        <p>3</p>
-
-                                    </li>
-                                    <li>
-                                        <img src={cuartos} alt="cuartos"></img>
-                                        <p>4</p>
-
-                                    </li>
-
-                                </ul>
-                                <Link to="/anuncios" className="boton">Ver Propiedades</Link>
-                            </div>
-                        </div>
-                        <div className="anuncio">
-                            <picture>
-                                <img src={anuncio3} alt="anuncio"></img>
-                            </picture>
-                            <div className="contenido-anuncio">
-                                <h3> Casa con piscina</h3>
-                                <p>Casa en el Lago con excelente vista, acabados de lujo a un exclente precio</p>
-                                <p className="precio"> 90.000.000</p>
-                                <ul className="iconos-caracteristicas">
-                                    <li>
-                                        <img src={wc} alt="poceta"></img>
-                                        <p>3</p>
-
-                                    </li>
-                                    <li>
-                                        <img src={estacionamiento} alt="estacionamiento"></img>
-                                        <p>3</p>
-
-                                    </li>
-                                    <li>
-                                        <img src={cuartos} alt="cuartos"></img>
-                                        <p>4</p>
-
-                                    </li>
-
-                                </ul>
-                                <Link to="/anuncios" className="boton">Ver Propiedades</Link>
-                            </div>
-                        </div>
-
-                    </div>
+                   <div>
+                    <Cards  
+                    anuncio1={imagen1}
+                    anuncio2={imagen2}
+                    anuncio3={imagen3}
+                    
+                    />
+                   </div>
                     <div className="ver-todas">
 
                         <Link to="/anuncios" className="boton-verde"> Ver Todas</Link>

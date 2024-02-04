@@ -1,27 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import "./../estilos/contacto.css";
-import Logo from "../imagenes/img/logo.svg";
+import { Header } from "../compoenentes/header";
 
 export const Contacto = () => {
     return(
         <> 
         <body>
-        <div className="header1">
-        <div className="contenedor1 contenido-header1">
-            <div className="barra">
-                <Link to="/">
-             <img src={Logo} alt= "Logotipo de Bienes Raices"></img>
-             </Link>
-             <nav className="navegacion">
-                <Link to="/nosotros" className="enlace">Nosotros</Link>
-                <Link to="/anuncios" className="enlace">Anuncios</Link>
-                <Link to="/blogs" className="enlace">Blogs</Link>
-                <Link to="/contacto" className="enlace">Contacto</Link>
-             </nav>
-            </div>
-        </div>
-        </div>
+        <Header mostrarImagenDeFondo={false} alturaMinima="30rem" />
         <div className="contenedor-seccion">
             <h1>Contacto</h1>
         </div>
