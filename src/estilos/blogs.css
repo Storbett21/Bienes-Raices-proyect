@@ -9,7 +9,7 @@ body {
 
 p {
     color: black;
-    font-size: 1rem;
+    font-size: 2rem;
 }
 
 
@@ -87,5 +87,9 @@ h4 {
     .navegacion a {
       margin-bottom: 10px; /* Agregar espacio entre elementos */
     }
+  }
+  .imagen {
+
+    padding-left: 2rem;
   }
   

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import Logo from "../imagenes/img/logo.svg";
 import header from "../imagenes/img/header.jpg"
+import cellmenu from "../imagenes/img/barras.svg";
 
 export const Header = ({ titulo, mostrarImagenDeFondo, alturaMinima }) => {
   const headerStyle = {
