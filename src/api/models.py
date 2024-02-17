@@ -1,16 +1,19 @@
+# En tu archivo models.py
+from sqlalchemy import Column, Integer, String, LargeBinary
 from flask_sqlalchemy import SQLAlchemy
-
-
 
 
 db = SQLAlchemy()
 
-
-
 class User(db.Model):
     __tablename__ = 'users'
-    id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String(120), nullable=False)
-    apellido = db.Column(db.String(120), nullable=False)
-    telefono = db.Column(db.String(120), nullable=False)
 
+    id = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(100))
+    apellido = db.Column(db.String(100))
+    telefono = db.Column(db.String(20))
+    email = db.Column(db.String(100))  # Nuevo campo para el email
+    mensaje = db.Column(db.Text)        # Nuevo campo para el mensaje
+    opciones = db.Column(db.String(10)) # Nuevo campo para las opciones (Compra/Vende)
+    presupuesto = db.Column(db.Float)   # Nuevo campo para el presupuesto
+    imagen = db.Column(db.LargeBinary)       # Para almacenar la imagen como datos binarios en la base de datos
