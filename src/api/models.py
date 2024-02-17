@@ -17,3 +17,18 @@ class User(db.Model):
     opciones = db.Column(db.String(10)) # Nuevo campo para las opciones (Compra/Vende)
     presupuesto = db.Column(db.Float)   # Nuevo campo para el presupuesto
     imagen = db.Column(db.LargeBinary)       # Para almacenar la imagen como datos binarios en la base de datos
+
+class Propiedad(db.Model):
+    __tablename__ = 'propiedades'
+
+    id = db.Column(db.Integer, primary_key=True)
+    titulo = db.Column(db.String(100))
+    descripcion = db.Column(db.String(200))
+    precio = db.Column(db.Integer)
+    banos = db.Column(db.Integer)
+    estacionamientos = db.Column(db.Integer)
+    habitaciones = db.Column(db.Integer)
+    imagen = db.Column(db.LargeBinary)  # Para almacenar la imagen como datos binarios en la base de datos
+
+    def as_dict(self):
+        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
