@@ -8,7 +8,6 @@ import { Blogs } from './paginas/blogs.js';
 import { Contacto } from './paginas/contacto.js';
 import Footer from './paginas/footer.js';
 import { Propiedades } from './compoenentes/propiedades.js';
-import { Back } from './paginas/Backend.js';
 import { Datos } from './paginas/form.js';
 
 
@@ -25,7 +24,6 @@ return (
     <Route path="/blogs" element={<Blogs />} />
     <Route path="/anuncios" element={<Anuncios />} />
     <Route path="/propiedades" element={<Propiedades />} />
-    <Route path="/backend" element={<Back />} />
     <Route path="/formulario" element={<Datos />} />
 
 

@@ -1,66 +1,66 @@
 import React, { useState } from 'react';
 
-
-
-
-
-
 export const Datos = () => {
-  // Estado para almacenar los valores del formulario
-  const [values, setValues] = useState({
-    idVendedores: '',
-    nombre: '',
-    apellido: '',
-    telefono: ''
-  });
+  const [nombre, setNombre] = useState('');
+  const [apellido, setApellido] = useState('');
+  const [telefono, setTelefono] = useState('');
+  const [message, setMessage] = useState('');
 
-  // Función para manejar cambios en los valores del formulario
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setValues({
-      ...values,
-      [name]: value
-    });
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  // Función para enviar los datos del formulario al backend
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Aquí puedes enviar los datos al backend utilizando fetch o axios
-    fetch('http://127.0.0.1:5000/insertar', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(values)
-    })
-    .then(response => response.json())
-    .then(data => {
-      // Manejar la respuesta del backend según sea necesario
-      console.log('Respuesta del backend:', data);
-    })
-    .catch(error => {
-      console.error('Error al enviar los datos:', error);
-    });
+    try {
+      const response = await fetch('http://localhost:5000/save_user', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ nombre, apellido, telefono }),
+      });
+
+      const responseData = await response.json();
+
+      setMessage(responseData.message);
+    } catch (error) {
+      setMessage('Error al guardar el usuario');
+      console.error('Error:', error);
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Nombre:
-        <input type="text" name="nombre" value={values.nombre} onChange={handleChange} />
-      </label>
-      <label>
-        Apellido:
-        <input type="text" name="apellido" value={values.apellido} onChange={handleChange} />
-      </label>
-      <label>
-        Teléfono:
-        <input type="text" name="telefono" value={values.telefono} onChange={handleChange} />
-      </label>
-      <button type="submit">Guardar</button>
-    </form>
+    <div>
+      <h1>Formulario de Usuario</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Nombre:
+          <input
+            type="text"
+            value={nombre}
+            onChange={(e) => setNombre(e.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          Apellido:
+          <input
+            type="text"
+            value={apellido}
+            onChange={(e) => setApellido(e.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          Teléfono:
+          <input
+            type="text"
+            value={telefono}
+            onChange={(e) => setTelefono(e.target.value)}
+          />
+        </label>
+        <br />
+        <button type="submit">Guardar Usuario</button>
+      </form>
+      {message && <p>{message}</p>}
+    </div>
   );
 }
-
-
