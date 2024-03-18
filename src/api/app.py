@@ -1,11 +1,12 @@
 import os
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory, flash, redirect, render_template
 from flask_migrate import Migrate
 from flask_cors import CORS
 from dotenv import load_dotenv
 from sqlalchemy import text
 from sqlalchemy.exc import SQLAlchemyError
 from models import db, User, Propiedad
+from werkzeug.utils import secure_filename
 
 load_dotenv()  # Cargar las variables de entorno
 
@@ -15,6 +16,12 @@ app.config['DEBUG'] = True  # Permite ver los errores
 app.config['ENV'] = 'development'  # Activa el servidor en modo desarrollo
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASEURI')  # Leemos la url de conexion a la base de datos
+
+# Configuración para manejar archivos estáticos
+UPLOAD_FOLDER = "Bienes_Raices"
+ALLOWED_EXTENSIONS = { 'jpg', 'jpeg', 'gif'}
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['ALLOWED_EXTENSIONS'] = ALLOWED_EXTENSIONS
 
 db.init_app(app)  # vinculacion del archivo models.py a nuestra app.py
 Migrate(app, db)  # db init, db migrate, db upgrade, db downgrade
@@ -31,66 +38,14 @@ def db_status():
     except SQLAlchemyError as e:
         return jsonify({"status": "Error connecting to database", "error": str(e)}), 500
 
+# Ruta para servir archivos estáticos (imágenes)
+@app.route('/uploads/<filename>')
+def uploaded_file(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+
 @app.route('/')
 def main():
     return jsonify({"status": "Server Up"}), 200
-
-
-@app.route('/save_user_with_image', methods=['POST'])
-def save_user_with_image():
-    try:
-        # Recibir datos del formulario
-        nombre = request.form.get('nombre')
-        apellido = request.form.get('apellido')
-        telefono = request.form.get('telefono')
-        email = request.form.get('email')
-        mensaje = request.form.get('mensaje')
-        opciones = request.form.get('opciones')
-        presupuesto = request.form.get('presupuesto')
-        imagen = request.files.get('imagen')
-
-        # Validar que se haya enviado una imagen
-        if imagen is None:
-            raise ValueError('No se ha proporcionado ninguna imagen')
-
-        # Validar que el archivo sea una imagen
-        if imagen.filename == '':
-            raise ValueError('No se ha proporcionado ninguna imagen')
-        if not imagen.filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')):
-            raise ValueError('El archivo no es una imagen válida')
-
-        # Validar el tamaño máximo del archivo (por ejemplo, 10 MB)
-        MAX_IMAGE_SIZE = 10 * 1024 * 1024  # 10 MB
-        if len(imagen.read()) > MAX_IMAGE_SIZE:
-            raise ValueError('El tamaño de la imagen es demasiado grande')
-
-        # Restablecer la posición del puntero del archivo
-        imagen.seek(0)
-
-        # Leer la imagen y convertirla a datos binarios
-        img_stream = imagen.read()
-        img_bytes = bytearray(img_stream)
-
-        # Crear un nuevo usuario y asignar la imagen
-        new_user = User(
-            nombre=nombre,
-            apellido=apellido,
-            telefono=telefono,
-            email=email,
-            mensaje=mensaje,
-            opciones=opciones,
-            presupuesto=presupuesto,
-            imagen=img_bytes
-        )
-        db.session.add(new_user)
-        db.session.commit()
-
-        return jsonify({"message": "Usuario guardado correctamente"}), 200
-    except ValueError as ve:
-        return jsonify({"message": str(ve)}), 400
-    except Exception as e:
-        return jsonify({"message": "Error al guardar usuario", "error": str(e)}), 500
-    
 
 @app.route('/agregar_propiedad', methods=['POST'])
 def agregar_propiedad():
@@ -106,12 +61,18 @@ def agregar_propiedad():
         if not (titulo and descripcion and precio and banos and estacionamientos and habitaciones and imagen):
             return jsonify({'error': 'Todos los campos son obligatorios'}), 400
 
-        if imagen.filename == '' or not imagen.filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')):
+        if imagen.filename == '' or not imagen.filename.lower().endswith(tuple('.' + ext for ext in app.config['ALLOWED_EXTENSIONS'])):
             return jsonify({'error': 'Por favor, proporcione una imagen válida (.png, .jpg, .jpeg, .gif)'}), 400
 
         MAX_IMAGE_SIZE = 10 * 1024 * 1024  # 10 MB
         if len(imagen.read()) > MAX_IMAGE_SIZE:
             return jsonify({'error': 'El tamaño de la imagen es demasiado grande (máx. 10 MB)'}), 400
+
+        # Guardar la imagen en el directorio de subidas
+        if not os.path.exists(app.config['UPLOAD_FOLDER']):
+            os.makedirs(app.config['UPLOAD_FOLDER'])
+        filename = secure_filename(imagen.filename)
+        imagen.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
         nueva_propiedad = Propiedad(
             titulo=titulo,
@@ -120,7 +81,7 @@ def agregar_propiedad():
             banos=banos,
             estacionamientos=estacionamientos,
             habitaciones=habitaciones,
-            imagen=imagen.read()
+            imagen=filename  # Guardamos el nombre de archivo en lugar de los bytes de la imagen
         )
 
         db.session.add(nueva_propiedad)
@@ -139,4 +100,3 @@ def agregar_propiedad():
 
 if __name__ == '__main__':
     app.run()
-
