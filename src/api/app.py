@@ -19,7 +19,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASEURI')  # Leemos la ur
 
 # Configuración para manejar archivos estáticos
 UPLOAD_FOLDER = "Bienes_Raices"
-ALLOWED_EXTENSIONS = { 'jpg', 'jpeg', 'gif'}
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['ALLOWED_EXTENSIONS'] = ALLOWED_EXTENSIONS
 
