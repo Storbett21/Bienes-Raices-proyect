@@ -16,7 +16,7 @@ class User(db.Model):
     mensaje = db.Column(db.Text)        # Nuevo campo para el mensaje
     opciones = db.Column(db.String(10)) # Nuevo campo para las opciones (Compra/Vende)
     presupuesto = db.Column(db.Float)   # Nuevo campo para el presupuesto
-    imagen = db.Column(db.LargeBinary)       # Para almacenar la imagen como datos binarios en la base de datos
+    
 
 class Propiedad(db.Model):
     __tablename__ = 'propiedades'
