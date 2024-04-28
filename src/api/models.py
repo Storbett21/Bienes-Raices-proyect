@@ -15,7 +15,7 @@ class User(db.Model):
     email = db.Column(db.String(100))  # Nuevo campo para el email
     mensaje = db.Column(db.Text)        # Nuevo campo para el mensaje
     opciones = db.Column(db.String(10)) # Nuevo campo para las opciones (Compra/Vende)
-    presupuesto = db.Column(db.Float)   # Nuevo campo para el presupuesto
+   
     
 
 class Propiedad(db.Model):
