@@ -56,7 +56,6 @@ def agregar_propiedad():
         banos = int(request.form['banos'])
         estacionamientos = int(request.form['estacionamientos'])
         habitaciones = int(request.form['habitaciones'])
-        imagen = request.files['imagen']
 
         if not (titulo and descripcion and precio and banos and estacionamientos and habitaciones and imagen):
             return jsonify({'error': 'Todos los campos son obligatorios'}), 400
