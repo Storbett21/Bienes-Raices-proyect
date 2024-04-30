@@ -28,7 +28,7 @@ class Propiedad(db.Model):
     banos = db.Column(db.Integer)
     estacionamientos = db.Column(db.Integer)
     habitaciones = db.Column(db.Integer)
-    imagen = db.Column(db.LargeBinary)  # Para almacenar la imagen como datos binarios en la base de datos
+   
 
     def as_dict(self):
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
