@@ -80,7 +80,7 @@ def agregar_propiedad():
             banos=banos,
             estacionamientos=estacionamientos,
             habitaciones=habitaciones,
-            imagen=filename  # Guardamos el nombre de archivo en lugar de los bytes de la imagen
+            
         )
 
         db.session.add(nueva_propiedad)
