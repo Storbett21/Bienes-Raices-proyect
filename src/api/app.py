@@ -50,7 +50,7 @@ def main():
 @app.route('/agregar_propiedad', methods=['POST'])
 def agregar_propiedad():
     try:
-        titulo = request.form['titlo']
+        titulo = request.form['titulo']
         descripcion = request.form['descripcion']
         precio = int(request.form['precio'])
         banos = int(request.form['banos'])
