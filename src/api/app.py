@@ -52,7 +52,7 @@ def agregar_propiedad():
     try:
         titulo = request.form['titulo']
         descripcion = request.form['descripcion']
-        precio = int(request.form['precio'])
+        PRECIO = int(request.form['precio'])
         banos = int(request.form['banos'])
         estacionamientos = int(request.form['estacionamientos'])
         habitaciones = int(request.form['habitaciones'])
