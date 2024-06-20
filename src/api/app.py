@@ -53,8 +53,8 @@ def agregar_propiedad():
         titulo = request.form['titulo']
         descripcion = request.form['descripcion']
         PRECIO = int(request.form['precio'])
-        banos = int(request.form['banos'])
-        estacionamientos = int(request.form['estacionamientos'])
+        bano = int(request.form['banos'])
+        estacionamiento = int(request.form['estacionamientos'])
         habitaciones = int(request.form['habitaciones'])
 
         if not (titulo and descripcion and precio and banos and estacionamientos and habitaciones and imagen):
