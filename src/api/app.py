@@ -63,7 +63,7 @@ def agregar_propiedad():
         if imagen.filename == '' or not imagen.filename.lower().endswith(tuple('.' + ext for ext in app.config['ALLOWED_EXTENSIONS'])):
             return jsonify({'error': 'Por favor, proporcione una imagen válida (.png, .jpg, .jpeg, .gif)'}), 400
 
-        MAX_IMAGE_SIZE = 10 * 1024 * 1024  # 10 MB
+        MAX_IMAGE_SIZE = 10 * 1024 * 1024  # 20 MB
         if len(imagen.read()) > MAX_IMAGE_SIZE:
             return jsonify({'error': 'El tamaño de la imagen es demasiado grande (máx. 10 MB)'}), 400
 
