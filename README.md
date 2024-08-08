@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# Bienes-Raices-proyect
+# Bienes-Raices 
 =======
 # Getting Started with Create React App
 
