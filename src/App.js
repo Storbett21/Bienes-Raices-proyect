@@ -19,12 +19,12 @@ return (
     <BrowserRouter>
     <Routes>
     <Route path="/" element={<Home />} />
-    <Route path="/nosotros" element={<Nosotros />} />
+    <Route path="/nosotros" element={<Interno />} />
     <Route path="/contacto" element={<Contacto />} />
     <Route path="/blogs" element={<Blogs />} />
-    <Route path="/anuncios" element={<Anuncios />} />
+    <Route path="/anuncios" element={<publicidad />} />
     <Route path="/propiedades" element={<Propiedades />} />
-    <Route path="/formulario" element={<Datos />} />
+    <Route path="/formulario" element={<RRSS />} />
 
 
 
